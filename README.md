@@ -57,10 +57,15 @@ The "For Leaders" area is protected by one shared password.
 
 ## Publishing it (pick one)
 
-**Option A — GitHub Pages (free, fastest to share a link):**
-1. In the GitHub repo: **Settings → Pages**.
-2. Source: **Deploy from a branch** → branch `claude/resurgens-mvp-site-6wwv2b` (or `main`) → `/ (root)` → Save.
-3. GitHub gives you a link like `https://<org>.github.io/christcovenant/`. Share that with leaders.
+**Option A — GitHub Pages (free, fastest to share a link):** an auto-deploy
+workflow is already committed (`.github/workflows/pages.yml`). It just needs
+Pages switched on once:
+1. In the GitHub repo: **Settings → Pages → Build and deployment**.
+2. Source: **GitHub Actions** → Save. *(This one click is the only manual step —
+   GitHub doesn't let the automation do it for you. It takes ~20 seconds.)*
+3. The workflow runs on the next push to `main` (or run it now from the
+   **Actions** tab → "Deploy site to GitHub Pages" → **Run workflow**).
+4. GitHub then shows your live link like `https://jasonmalec.github.io/ChristCovenant/`. Share that with leaders.
    - The site is already set to `noindex` + `robots.txt Disallow`, so it stays out of search.
 
 **Option B — Lift into Squarespace / Framer / christcovenant.com:** the brief's

@@ -1,9 +1,12 @@
 # Deploys the Resurgens site to GitHub Pages automatically.
 #
-# This workflow auto-enables GitHub Pages (enablement: true below), so no manual
-# setup is needed for a user-owned repo. Every push to `main` republishes the
-# site and the Pages link stays current. You can also run it from the Actions tab.
-# (If your org restricts Pages, an admin may need to allow it once.)
+# ONE-TIME SETUP (repo owner, ~20 seconds — required once):
+#   Repo -> Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# GitHub's automation token isn't allowed to turn Pages on for the first time,
+# so this single toggle has to be done by a human. After that, every push to
+# `main` republishes the site automatically and the link stays current.
+# (enablement: true below makes the workflow finish the setup the moment Pages
+#  is switched on, and is harmless before then.)
 #
 # The site stays noindex + robots Disallow, so publishing here does NOT make it
 # searchable — it only produces a shareable link for leaders (Phase 0).
