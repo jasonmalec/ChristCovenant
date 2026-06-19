@@ -1,0 +1,4 @@
+# Phase 0 — Resurgens is a gated internal-alignment site.
+# Keep it out of all search engines until public launch (Phase 1).
+User-agent: *
+Disallow: /
