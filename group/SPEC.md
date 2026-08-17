@@ -80,9 +80,25 @@ never public.
 Supabase auth URLs live in project settings, not in code or migrations, so they
 have to be set by hand once:
 
-- **Site URL** → the app's own URL (it ships defaulted to `localhost:3000`,
-  which sends every sign-in link to a server that isn't there)
-- **Redirect URLs** → add the preview URL, and the published URL once published
+Found under **More → Cloud → Users → Advanced**.
+
+- **Site URL** → the app's own URL. This is the only field that needs setting.
+  It ships defaulted to `localhost:3000`, which sends every sign-in link to a
+  server that isn't there — the cause of the first round of failed sign-ins.
+- **Redirect URLs** → nothing to do. Lovable manages the `lovable.app` preview
+  and published URLs itself and refuses manual duplicates ("System-managed URLs
+  cannot be added manually"). The list reads "No URLs added yet" because it only
+  displays hand-added entries; the counter above it shows the system-managed
+  ones are already there. Only a custom domain would need adding by hand.
+
+Sign-in links target `/auth` rather than the bare origin, because `/` sits
+behind the authenticated route guard and a router redirect drops the URL hash —
+which is where Supabase returns both the error codes *and* the session tokens.
+
+Belt and braces for links already sitting in inboxes that still point at the
+bare origin: `src/lib/auth-error.ts` stashes any auth-error hash into
+sessionStorage, and both the root route and the guard call it before redirecting,
+so the message survives the hop and displays exactly once.
 
 List those URLs explicitly. A `https://*.lovable.app/**` wildcard would let a
 sign-in token be delivered to any app on that shared domain, which is not a
