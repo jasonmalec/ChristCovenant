@@ -60,9 +60,41 @@ never public.
   call. Not leaders-only.
 - **Leaders** (Jason & Meredith) can edit the roster and remove any post; that
   is the only elevated permission.
+- **Two ways in.** Tap the emailed link, *or* type the 6-digit code from the
+  same email straight into the app. The code path exists because tapping a
+  magic link on a phone often opens a different browser than the one you
+  started in, which silently drops the session — a large share of "the link
+  didn't work" reports are exactly that. Typing six digits into the app you
+  already have open avoids the problem, and works even if the redirect URLs
+  are misconfigured.
 - Row-level security on every table: signed-in members read group content,
   authors edit their own, leaders override.
+- `anon` has **no table grants at all**, so an anonymous request is refused at
+  the permission layer before RLS is consulted. RLS is the second line of
+  defense rather than the only one — a future table added without RLS still
+  won't leak.
 - `noindex` plus the repo-wide `robots.txt` keep it out of search results.
+
+### One-time backend setting
+
+Supabase auth URLs live in project settings, not in code or migrations, so they
+have to be set by hand once:
+
+- **Site URL** → the app's own URL (it ships defaulted to `localhost:3000`,
+  which sends every sign-in link to a server that isn't there)
+- **Redirect URLs** → add the preview URL, and the published URL once published
+
+List those URLs explicitly. A `https://*.lovable.app/**` wildcard would let a
+sign-in token be delivered to any app on that shared domain, which is not a
+trade worth making for something holding eighteen people's phone numbers.
+
+### Verified, not assumed
+
+Checked by querying the database directly rather than trusting the build
+summary: 14 tables, RLS on all 14, all 42 policies scoped to `authenticated`,
+every INSERT gated by `is_member() AND author_id = auth.uid()` (which also stops
+posting under someone else's name), `group-media` bucket private, zero `anon`
+grants, roster seeded 18/18 with the allowlist matching and no strays.
 
 ## Features
 
