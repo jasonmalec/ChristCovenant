@@ -60,13 +60,17 @@ never public.
   call. Not leaders-only.
 - **Leaders** (Jason & Meredith) can edit the roster and remove any post; that
   is the only elevated permission.
-- **Two ways in.** Tap the emailed link, *or* type the 6-digit code from the
-  same email straight into the app. The code path exists because tapping a
-  magic link on a phone often opens a different browser than the one you
-  started in, which silently drops the session — a large share of "the link
-  didn't work" reports are exactly that. Typing six digits into the app you
-  already have open avoids the problem, and works even if the redirect URLs
-  are misconfigured.
+- **One way in: the emailed link.** A 6-digit code path was built as a more
+  phone-friendly alternative, then disabled — auth email comes from Lovable's
+  shared managed sender, whose template has no `{{ .Token }}`, so no code is
+  ever printed for anyone to type. The code UI is gated behind
+  `CODE_SIGN_IN_ENABLED` in `src/routes/auth.tsx`; configuring an owned email
+  domain and scaffolding the templates is what would let it be switched on.
+  A control that can never work is worse than none on a sign-in screen, so it
+  renders nothing today.
+- Links are single-use. "Send another link" is the only recovery path, and each
+  new request invalidates every earlier one — so an older email in the inbox is
+  guaranteed to fail even when everything is configured correctly.
 - Row-level security on every table: signed-in members read group content,
   authors edit their own, leaders override.
 - `anon` has **no table grants at all**, so an anonymous request is refused at
@@ -84,12 +88,26 @@ Found under **More → Cloud → Users → Advanced**.
 
 - **Site URL** → the app's own URL. This is the only field that needs setting.
   It ships defaulted to `localhost:3000`, which sends every sign-in link to a
-  server that isn't there — the cause of the first round of failed sign-ins.
-- **Redirect URLs** → nothing to do. Lovable manages the `lovable.app` preview
-  and published URLs itself and refuses manual duplicates ("System-managed URLs
-  cannot be added manually"). The list reads "No URLs added yet" because it only
-  displays hand-added entries; the counter above it shows the system-managed
-  ones are already there. Only a custom domain would need adding by hand.
+  server that isn't there — the cause of every failed sign-in during setup.
+- **Redirect URLs** → nothing to do. Lovable seeds the allow list with its own
+  preview *and* published patterns, all with `/**` globs, and refuses manual
+  duplicates ("System-managed URLs cannot be added manually"). The list reads
+  "No URLs added yet" because it only displays hand-added entries. Only a
+  custom domain would need adding by hand.
+
+**Expect a lag after saving Site URL.** The settings screen shows the new value
+immediately, but the auth server keeps minting links with the old one until it
+reloads its config — observed at roughly two minutes. A link generated during
+that window carries the stale `redirect_to` forever, because the destination is
+baked into the link when the email is sent, not when it's clicked. This cost
+about an hour of confusion: the setting looked correct, the link still went to
+localhost, and nothing was actually wrong. **After changing Site URL, wait a
+couple of minutes, then request a fresh link.**
+
+To check a link without spending it: the "Log In" button points at a
+`email.auth.lovable.cloud/c/<payload>` click-wrapper. The payload is
+base64url-encoded zlib — decode it and read the `l=` parameter to see the real
+`redirect_to`. That is the definitive test of whether config has taken effect.
 
 Sign-in links target `/auth` rather than the bare origin, because `/` sits
 behind the authenticated route guard and a router redirect drops the URL hash —
