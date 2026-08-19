@@ -79,6 +79,42 @@ never public.
   won't leak.
 - `noindex` plus the repo-wide `robots.txt` keep it out of search results.
 
+### Guest access
+
+Church staff can be given a read-only guest login. Noah Michaw, the Christ
+Covenant groups director, is the first.
+
+**A guest sees everything a member sees except prayer requests.** Contact
+details are deliberately *included*: Noah is the person who supplied the roster
+in the first place, so withholding it would protect nothing and only make the
+app look broken. Prayer requests are the real boundary — the sixteen shared
+those with the group.
+
+How it is enforced:
+
+- `allowed_emails.role` is `'member'` or `'guest'`. **`is_member()` requires
+  `role = 'member'`** — this is load-bearing. Before roles existed, `is_member()`
+  returned true for any row in the table, so adding a guest address would have
+  granted full member access, including the ability to post as a member.
+- Guests hold **SELECT policies only**. There is no insert, update, or delete
+  policy referencing `is_guest()` anywhere.
+- Guests cannot read `people`, `profiles`, or `allowed_emails` directly. They
+  read two definer views instead — `directory` (roster plus contact details) and
+  `authors` (names for post attribution, no contact columns) — each guarded by
+  `is_viewer()` and granted to `authenticated` only, never `anon`.
+- Comments are scoped to `parent_type <> 'prayer_request'`. Replies carry the
+  substance of the request they hang off, so leaving them readable would have
+  made the prayer boundary decorative.
+
+Leaders add and remove guests from a leaders-only panel; the grant is the same
+for every guest. A per-guest permission level would be easy to add if a future
+guest should see less.
+
+Verified by simulating the guest's own session (`SET ROLE authenticated` with
+their JWT claims): 18 names, 18 emails, 17 phones — 17 because Libby Whitmire's
+cell is genuinely absent — and 0 rows from prayer_requests, prayer_prayed,
+comments, people, profiles, and allowed_emails.
+
 ### One-time backend setting
 
 Supabase auth URLs live in project settings, not in code or migrations, so they
