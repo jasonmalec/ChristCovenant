@@ -21,8 +21,37 @@ and the rules survive independently of any one platform.
 |---|---|
 | **Meets** | 1st, 2nd, and 3rd Mondays |
 | **Time** | 6:45 – 8:30 PM |
+| **Where** | 1454 Canoochee Drive, Brookhaven — always the Malecs' |
 | **4th Monday** | Off |
 | **5th Monday** | Optional social outing, when the month has one |
+| **First meeting** | 14 September 2026 |
+
+`GROUP_START` in `src/lib/schedule.ts` is the season's opening date; nothing
+before it is ever generated, so the dashboard, the notes picker and the calendar
+export all inherit the same starting line. `GROUP_ADDRESS` works the same way for
+the venue. Both are single constants — change one, every surface follows.
+
+**Dinner, not snacks.** One person brings dinner, defaulting to Meredith Malec
+and claimable by anyone. The default is resolved by name rather than a
+hardcoded id, so it survives a reseed. Hosting stays a couple; dinner is a
+person, because people volunteer as themselves.
+
+### What we're studying
+
+*The Five Love Languages*, chapters 1–3 on the first night and two per session
+after that.
+
+| Date | Chapters |
+|---|---|
+| Sep 14 | 1–3 · After the Wedding · The Love Tank · Falling in Love |
+| Sep 21 | 4–5 · Words of Affirmation · Quality Time |
+| Oct 5 | 6–7 · Receiving Gifts · Acts of Service |
+| Oct 12 | 8–9 · Physical Touch · Discovering Your Language |
+| Oct 19 | 10–11 · Love Is a Choice · Love Makes the Difference |
+| Nov 2 | 12–13 · Loving the Unlovely · A Personal Word |
+
+Topics live in `meeting_details.topic` and stay editable in the app — this is a
+starting plan, not a fixture.
 
 Meeting dates are **computed, never hand-entered**. A month's Mondays are
 enumerated in order: #1–#3 are meetings, #4 is the off week (still shown on the
