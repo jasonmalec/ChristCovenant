@@ -32,9 +32,13 @@ export all inherit the same starting line. `GROUP_ADDRESS` works the same way fo
 the venue. Both are single constants — change one, every surface follows.
 
 **Dinner, not snacks.** One person brings dinner, defaulting to Meredith Malec
-and claimable by anyone. The default is resolved by name rather than a
-hardcoded id, so it survives a reseed. Hosting stays a couple; dinner is a
-person, because people volunteer as themselves.
+and claimable by anyone. It is a person rather than a couple, because people
+volunteer as themselves. The default resolves by name rather than a hardcoded
+id, so it survives a reseed.
+
+There is **no host assignment** — every meeting is at the Malecs', so a "who's
+hosting" field could only ever say the same thing. `host_couple_id` was dropped
+rather than left unused, since a dead column invites someone to wire it back up.
 
 ### What we're studying
 
@@ -201,10 +205,20 @@ grants, roster seeded 18/18 with the allowlist matching and no strays.
 tap-to-email addresses, wedding date, how they met, and a short "about us" each
 couple maintains themselves.
 
-**Calendar** — auto-generated dates with the off weeks and socials marked. Each
-person RSVPs yes/no; the meeting shows who's coming. Host and snack are assigned
-per meeting so it isn't a group text every month. One-tap `.ics` export puts the
-whole rhythm on a personal calendar.
+**Calendar** — auto-generated dates with the off weeks and socials marked. Every
+meeting is at the Malecs', so there is no host assignment; the address sits with
+the date and time and taps through to maps. Dinner is the one thing assigned.
+One-tap `.ics` export puts the whole rhythm, address included, on a personal
+calendar.
+
+**RSVPs are per person, not per account.** `rsvps` is keyed on `people.id`
+rather than the auth user, because most spouses have no account yet — keying on
+the account made "both of us are coming" impossible to express. A member may
+RSVP for anyone in their own couple and nobody else's, enforced by
+`private.my_couple_id()` in the row-level policy rather than by the UI. The old
+`user_id` became `recorded_by`: worth knowing who tapped the button when one
+person answers for two. Everyone, guests included, sees both lists — who's
+coming and who can't.
 
 **Prayer requests** — anyone posts a request or a praise. Others tap "I prayed
 for this" (shows a count, not a leaderboard) and leave short encouragements.
@@ -222,7 +236,8 @@ says why in a sentence. Upvotes and comments so good ones surface.
 comments. This is the "interact socially" piece.
 
 **Dashboard** — next gathering with a plain-language countdown ("tonight", "in
-3 days"), who's hosting, unanswered prayer requests, and recent activity.
+3 days"), the address, who's bringing dinner, unanswered prayer requests, and
+recent activity.
 
 ## Design
 
