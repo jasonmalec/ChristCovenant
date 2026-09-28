@@ -69,17 +69,17 @@ Nine couples, listed in roster order. Photo filenames match the couple `id`.
 |---|---|---|---|
 | Popp | Josh · (616) 649-5306 · joshlizziepopp@gmail.com | Lizzie · (734) 807-2421 · lizzie.lietaert@gmail.com | `popp.jpg` |
 | Sanderfer | Christian · (402) 770-8649 · csanderfer21@gmail.com | Laura · (615) 587-3201 · laura.duncan.216@gmail.com | `sanderfer.jpg` |
-| Matistic | Ben · (404) 394-4668 · Benmatistic15@gmail.com | Callye Ann · (706) 616-4662 · callyeann@gmail.com | **needed** |
+| Matistic | Ben · (404) 394-4668 · Benmatistic15@gmail.com | Callye Ann · (706) 616-4662 · callyeann@gmail.com | `matistic.jpg` |
 | Braddy | Cooper · (678) 628-5753 · aucooper10@gmail.com | Kelley · (678) 674-8040 · kelleyhcantrell@gmail.com | `braddy.jpg` |
 | Tsang | Michael · (540) 230-1185 · mcftsang@gmail.com | Abigail · (704) 728-6833 · agpeck28@gmail.com | `tsang.jpg` |
-| Keyes | Thomas · (865) 809-8966 · thomaskeyes25@gmail.com | Holly · (865) 385-1174 · hollyhagood98@gmail.com | **needed** |
-| Whitmire | Ben · (770) 707-6492 · benwhitmire1@gmail.com | Libby · *cell needed* · libbystipppuffer@gmail.com | `whitmire.jpg` |
+| Whitmire | Ben · (770) 707-6492 · benwhitmire1@gmail.com | Libby · (817) 987-9829 · libbystipppuffer@gmail.com | `whitmire.jpg` |
 | Walker | Connor · (470) 201-7557 · connorreedwalker@gmail.com | Kennison · (912) 227-3707 · kennison.blackerby@gmail.com | `walker.jpg` |
 | Farkas | Dalon · (678) 386-3915 · dalonfarkas@yahoo.com | Austin · (770) 880-5731 · willinghamaustin@gmail.com | **needed** |
 | Malec *(leaders)* | Jason · (404) 395-1584 · jason.malec@gmail.com | Meredith · (404) 395-1650 · meredithmalec@gmail.com | `malec.jpg` |
 
-**Outstanding:** photos for the Matistics and the Keyeses (neither couple made
-the first gathering) and the Farkases (joined 28 September 2026), and Libby Whitmire's cell number.
+**Outstanding:** a photo for the Farkases (joined 28 September 2026).
+
+The Keyeses left the group and were removed on 28 September 2026.
 
 ## Access & privacy
 

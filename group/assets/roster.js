@@ -67,22 +67,12 @@ export const COUPLES = [
     ],
   },
   {
-    id: 'keyes',
-    couple: 'Thomas & Holly Keyes',
-    photo: 'keyes.jpg',
-    people: [
-      { first: 'Thomas', last: 'Keyes', phone: '(865) 809-8966', email: 'thomaskeyes25@gmail.com' },
-      { first: 'Holly', last: 'Keyes', phone: '(865) 385-1174', email: 'hollyhagood98@gmail.com' },
-    ],
-  },
-  {
     id: 'whitmire',
     couple: 'Ben & Libby Whitmire',
     photo: 'whitmire.jpg',
     people: [
       { first: 'Ben', last: 'Whitmire', phone: '(770) 707-6492', email: 'benwhitmire1@gmail.com' },
-      // Libby's cell wasn't on the roster sheet — drop it in here when you have it.
-      { first: 'Libby', last: 'Whitmire', phone: '', email: 'libbystipppuffer@gmail.com' },
+      { first: 'Libby', last: 'Whitmire', phone: '(817) 987-9829', email: 'libbystipppuffer@gmail.com' },
     ],
   },
   {

@@ -6,10 +6,9 @@ Filenames match the couple `id` in `../roster.js`:
 |---|---|---|
 | `popp.jpg` | Josh & Lizzie Popp | have it |
 | `sanderfer.jpg` | Christian & Laura Sanderfer | have it |
-| `matistic.jpg` | Ben & Callye Ann Matistic | **needed** — weren't at the first gathering |
+| `matistic.jpg` | Ben & Callye Ann Matistic | have it |
 | `braddy.jpg` | Cooper & Kelley Braddy | have it |
 | `tsang.jpg` | Michael & Abigail Tsang | have it |
-| `keyes.jpg` | Thomas & Holly Keyes | **needed** — weren't at the first gathering |
 | `whitmire.jpg` | Ben & Libby Whitmire | have it |
 | `walker.jpg` | Kennison & Connor Walker | have it |
 | `farkas.jpg` | Dalon & Austin Farkas | **needed** — joined 28 Sep 2026 |
