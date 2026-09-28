@@ -75,10 +75,11 @@ Nine couples, listed in roster order. Photo filenames match the couple `id`.
 | Keyes | Thomas · (865) 809-8966 · thomaskeyes25@gmail.com | Holly · (865) 385-1174 · hollyhagood98@gmail.com | **needed** |
 | Whitmire | Ben · (770) 707-6492 · benwhitmire1@gmail.com | Libby · *cell needed* · libbystipppuffer@gmail.com | `whitmire.jpg` |
 | Walker | Connor · (470) 201-7557 · connorreedwalker@gmail.com | Kennison · (912) 227-3707 · kennison.blackerby@gmail.com | `walker.jpg` |
+| Farkas | Dalon · (678) 386-3915 · dalonfarkas@yahoo.com | Austin · (770) 880-5731 · willinghamaustin@gmail.com | **needed** |
 | Malec *(leaders)* | Jason · (404) 395-1584 · jason.malec@gmail.com | Meredith · (404) 395-1650 · meredithmalec@gmail.com | `malec.jpg` |
 
 **Outstanding:** photos for the Matistics and the Keyeses (neither couple made
-the first gathering), and Libby Whitmire's cell number.
+the first gathering) and the Farkases (joined 28 September 2026), and Libby Whitmire's cell number.
 
 ## Access & privacy
 

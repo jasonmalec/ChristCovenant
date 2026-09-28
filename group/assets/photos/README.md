@@ -12,6 +12,7 @@ Filenames match the couple `id` in `../roster.js`:
 | `keyes.jpg` | Thomas & Holly Keyes | **needed** — weren't at the first gathering |
 | `whitmire.jpg` | Ben & Libby Whitmire | have it |
 | `walker.jpg` | Kennison & Connor Walker | have it |
+| `farkas.jpg` | Dalon & Austin Farkas | **needed** — joined 28 Sep 2026 |
 | `malec.jpg` | Jason & Meredith Malec | have it |
 
 The app never renders a broken image — a couple with no photo gets a monogram

@@ -95,6 +95,15 @@ export const COUPLES = [
     ],
   },
   {
+    id: 'farkas',
+    couple: 'Dalon & Austin Farkas',
+    photo: 'farkas.jpg',
+    people: [
+      { first: 'Dalon', last: 'Farkas', phone: '(678) 386-3915', email: 'dalonfarkas@yahoo.com' },
+      { first: 'Austin', last: 'Farkas', phone: '(770) 880-5731', email: 'willinghamaustin@gmail.com' },
+    ],
+  },
+  {
     id: 'malec',
     couple: 'Jason & Meredith Malec',
     photo: 'malec.jpg',
