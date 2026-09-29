@@ -74,10 +74,10 @@ Nine couples, listed in roster order. Photo filenames match the couple `id`.
 | Tsang | Michael · (540) 230-1185 · mcftsang@gmail.com | Abigail · (704) 728-6833 · agpeck28@gmail.com | `tsang.jpg` |
 | Whitmire | Ben · (770) 707-6492 · benwhitmire1@gmail.com | Libby · (817) 987-9829 · libbystipppuffer@gmail.com | `whitmire.jpg` |
 | Walker | Connor · (470) 201-7557 · connorreedwalker@gmail.com | Kennison · (912) 227-3707 · kennison.blackerby@gmail.com | `walker.jpg` |
-| Farkas | Dalon · (678) 386-3915 · dalonfarkas@yahoo.com | Austin · (770) 880-5731 · willinghamaustin@gmail.com | **needed** |
+| Farkas | Dalon · (678) 386-3915 · dalonfarkas@yahoo.com | Austin · (770) 880-5731 · willinghamaustin@gmail.com | `farkas.jpg` |
 | Malec *(leaders)* | Jason · (404) 395-1584 · jason.malec@gmail.com | Meredith · (404) 395-1650 · meredithmalec@gmail.com | `malec.jpg` |
 
-**Outstanding:** a photo for the Farkases (joined 28 September 2026).
+**Outstanding:** nothing — every couple has a photo and every person has a cell.
 
 The Keyeses left the group and were removed on 28 September 2026.
 

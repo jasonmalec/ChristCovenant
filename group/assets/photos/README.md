@@ -11,7 +11,7 @@ Filenames match the couple `id` in `../roster.js`:
 | `tsang.jpg` | Michael & Abigail Tsang | have it |
 | `whitmire.jpg` | Ben & Libby Whitmire | have it |
 | `walker.jpg` | Kennison & Connor Walker | have it |
-| `farkas.jpg` | Dalon & Austin Farkas | **needed** — joined 28 Sep 2026 |
+| `farkas.jpg` | Dalon & Austin Farkas | have it |
 | `malec.jpg` | Jason & Meredith Malec | have it |
 
 The app never renders a broken image — a couple with no photo gets a monogram
