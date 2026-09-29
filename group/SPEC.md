@@ -57,10 +57,28 @@ after that.
 Sep 28 was a 4th Monday held as a meeting instead of an off week. Oct 5 is off
 and Oct 12 is a social with no study (Jason & Meredith away), so chapters 8–13
 each moved back one meeting. Oct 26 is a regular 4th-Monday off week. These
-exceptions live in `schedule_overrides`.
+exceptions live in `schedule_overrides`; the chapters follow them on their own.
 
-Topics live in `meeting_details.topic` and stay editable in the app — this is a
-starting plan, not a fixture.
+**The curriculum follows the calendar; it is not pinned to dates.** The book is
+an ordered list in `curriculum_sessions` (`seq`, `title`). Session *N* lands on
+the *N*th meeting night on or after `GROUP_START`, computed from the same
+gathering list the calendar uses (the Monday rhythm plus `schedule_overrides`).
+So marking a Monday off or social, or turning an off week into a meeting,
+re-flows every later session automatically — the table above is simply what
+that rule produces today, not something anyone maintains.
+
+- `assignTopics()` in `src/lib/curriculum.ts` does the mapping;
+  `useMeetingTopics()` in `src/hooks/useCurriculum.ts` is the one hook the
+  dashboard, calendar and notes picker all read, so they can't disagree.
+- `meeting_details.topic` is now only a **one-off topic** for a single night.
+  A meeting with one set shows it and does *not* use up a curriculum session,
+  so a special night pushes the book back a meeting too. Clearing it returns
+  that night to the curriculum.
+- Leaders edit the list (rename, add, delete, reorder) from a Curriculum card
+  on the calendar page. RLS: viewers read, leaders write, no `anon` grant.
+- Caveat: past nights are recomputed the same way, so changing the kind of a
+  date that has *already happened* would relabel history. Only change future
+  dates.
 
 Meeting dates are **computed, never hand-entered**. A month's Mondays are
 enumerated in order: #1–#3 are meetings, #4 is the off week (still shown on the
