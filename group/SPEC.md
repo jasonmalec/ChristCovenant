@@ -49,10 +49,15 @@ after that.
 |---|---|
 | Sep 14 | 1–3 · After the Wedding · The Love Tank · Falling in Love |
 | Sep 21 | 4–5 · Words of Affirmation · Quality Time |
-| Oct 5 | 6–7 · Receiving Gifts · Acts of Service |
-| Oct 12 | 8–9 · Physical Touch · Discovering Your Language |
-| Oct 19 | 10–11 · Love Is a Choice · Love Makes the Difference |
-| Nov 2 | 12–13 · Loving the Unlovely · A Personal Word |
+| Sep 28 | 6–7 · Receiving Gifts · Acts of Service |
+| Oct 19 | 8–9 · Physical Touch · Discovering Your Language |
+| Nov 2 | 10–11 · Love Is a Choice · Love Makes the Difference |
+| Nov 9 | 12–13 · Loving the Unlovely · A Personal Word |
+
+Sep 28 was a 4th Monday held as a meeting instead of an off week. Oct 5 is off
+and Oct 12 is a social with no study (Jason & Meredith away), so chapters 8–13
+each moved back one meeting. Oct 26 is a regular 4th-Monday off week. These
+exceptions live in `schedule_overrides`.
 
 Topics live in `meeting_details.topic` and stay editable in the app — this is a
 starting plan, not a fixture.
